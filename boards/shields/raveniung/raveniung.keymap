@@ -23,41 +23,17 @@
 #define FN      4
 #define SET     5
 
-// Mac
-#define M_DEF   6
-#define M_NAV   7
-#define M_SYM   8
-#define M_NUM   9
-#define M_FN    10
-#define M_SET   11
-
-// Stupid workaround for Horizon Client on MacOS
-#define H_DEF   12
-#define H_NAV   13
-#define H_SYM   14
-#define H_NUM   15
-#define H_FN    16
-#define H_SET   17
-
-// Game
-#define GME     18
-
 // Global
-#define MSE     19
-#define SPCL    20
-#define SCRL    21
+#define MSE     6
+#define SCRL    7
 
 // Special shortcuts
 #define ________     &trans
 #define TODO         &trans
 #define DEL_W        &kp LC(BSPC)
 #define SPACE_SYM    &lt SYM SPACE
-#define SPACE_M_SYM  &lt M_SYM SPACE
-#define SPACE_H_SYM  &lt H_SYM SPACE
-#define J_MSE        &lt MSE J
-#define C_NAV        &lt NAV C
-#define C_M_NAV      &lt M_NAV C
-#define C_H_NAV      &lt H_NAV C
+#define Q_MSE        &lt MSE Q
+#define A_NAV        &lt NAV A
 #define EXT_ON       &ext_power EP_ON
 #define SCRL_D       &msc SCRL_DOWN
 #define SCRL_U       &msc SCRL_UP
@@ -71,31 +47,17 @@
 #define BT_CLEAR   &bt BT_CLR
 
 // home row mod left
-#define ALT_R &hm LALT R
-#define CTL_I &hm LCTRL I
-#define SFT_E &hm LSHIFT E
-#define GUI_V &hm LGUI V
+#define ALT_S &hm LALT S
+#define CTL_D &hm LCTRL D
+#define SFT_F &hm LSHIFT F
+#define GUI_Y &hm LGUI Y
 
 // home row mod right
-#define SFT_N    &hm RSHIFT N
-#define CTL_T    &hm RCTRL T
-#define RALT_S   &hm RALT S
-#define LALT_H    &hm LALT H
-#define LGUI_K    &hm LGUI K
-
-// home row mod mac
-#define CMD_I  &hm LGUI I
-#define CMD_T  &hm LGUI T
-#define CTL_H  &hm RCTRL H
-#define CTL_K  &hm RCTRL K
-#define CTL_V  &hm LCTRL V
-
-// mac shortcuts
-#define M_HME    &kp LG(LEFT)
-#define M_END    &kp LG(RIGHT)
-#define M_PUP    &kp LA(UP)
-#define M_PDWN   &kp LA(DOWN)
-#define M_MC     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
+#define SFT_J     &hm RSHIFT J
+#define CTL_K     &hm RCTRL K
+#define RALT_L    &hm RALT L
+#define LALT_OE   &hm LALT DE_ODIA
+#define LGUI_UE   &hm LGUI DE_UDIA
 
 &sk {
         release-after-ms = <3000>;
@@ -121,30 +83,6 @@
 
     macros {
 
-        ZMK_MACRO(go_src,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_tap     &kp F1>
-                , <&macro_release &kp LALT>
-                , <&macro_wait_time 2000>
-                , <&macro_tap     &kp RET>
-                ;
-        )
-
-        ZMK_MACRO(run,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press   &kp LALT>
-                , <&macro_press   &kp LSHFT>
-                , <&macro_tap     &kp F10>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LALT>
-                ;
-        )
-
         ZMK_MACRO(lck,
             wait-ms = <30>;
             tap-ms = <40>;
@@ -154,119 +92,6 @@
                 , <&macro_release &kp LGUI>
                 ;
         )
-
-        ZMK_MACRO(lck_mac,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_press   &kp LGUI>
-                , <&macro_press   &kp LCTL>
-                , <&macro_tap     &kp Q>
-                , <&macro_release &kp LCTL>
-                , <&macro_release &kp LGUI>
-                ;
-        )
-
-        ZMK_MACRO(to_archyoga,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_1>
-                , <&macro_tap  &to DEF>
-                ;
-        )
-
-        ZMK_MACRO(to_scd,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_2>
-                , <&macro_tap  &to M_DEF>
-                , <&macro_press   &kp LALT>
-                , <&macro_press   &kp LGUI>
-                , <&macro_press   &kp LSHFT>
-                , <&macro_tap     &kp RIGHT>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LGUI>
-                , <&macro_release &kp LALT>
-                , <&macro_tap  &to H_DEF>
-                , <&macro_press   &kp LWIN>
-                , <&macro_press   &kp LCTL>
-                , <&macro_tap     &kp LEFT>
-                , <&macro_release &kp LCTL>
-                , <&macro_release &kp LWIN>
-                ;
-        )
-
-        ZMK_MACRO(to_nca,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_2>
-                , <&macro_tap  &to M_DEF>
-                , <&macro_press   &kp LALT>
-                , <&macro_press   &kp LGUI>
-                , <&macro_press   &kp LSHFT>
-                , <&macro_tap     &kp LEFT>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LGUI>
-                , <&macro_release &kp LALT>
-                ;
-        )
-
-        ZMK_MACRO(to_devvm,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_2>
-                , <&macro_tap    &to H_DEF>
-                , <&macro_press   &kp LWIN>
-                , <&macro_press   &kp LCTL>
-                , <&macro_tap     &kp RIGHT>
-                , <&macro_release &kp LCTL>
-                , <&macro_release &kp LWIN>
-                ;
-        )
-
-        ZMK_MACRO(to_x1,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_4>
-                , <&macro_tap  &to DEF>
-                ;
-        )
-
-        ZMK_MACRO(to_ip60,
-            wait-ms = <30>;
-            tap-ms = <40>;
-            bindings
-                = <&macro_tap  BT_5>
-                , <&macro_tap  &to DEF>
-                ;
-        )
-
-        ZMK_MACRO(m_spec,
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings
-                = <&macro_tap &kp DE_AT &kp M &kp E &kp DOT &kp C &kp O &kp M>                ;
-        )
-
-        ZMK_MACRO(mas_spec,
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings
-                = <&macro_tap &kp DE_AT &kp I &kp C &kp L &kp O &kp U &kp D &kp DOT &kp C &kp O &kp M>                ;
-        )
-
-        ZMK_MACRO(maz_spec,
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings
-                = <&macro_tap &kp DE_AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
-                ;
-        )       
 
     };
 
@@ -311,17 +136,17 @@
 
         default_layer {
             bindings = <
-                                 &kp L  &kp U        &kp A        &kp Q                 &kp W      &kp B      &kp D      &kp G
-               J_MSE      C_NAV  ALT_R  CTL_I        SFT_E        &kp O                 &kp M      SFT_N      CTL_T      RALT_S   LALT_H  &kp DE_Z
-               &kp DE_SS  GUI_V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA           &kp P      &kp F      &kp COMMA  &kp DOT  LGUI_K  &kp DE_Y
-                                                     &mo NUM      &kp LSHFT             SPACE_SYM  &kp BSPC
+                                 &kp W  &kp E  &kp R    &kp T             &kp DE_Z   &kp U      &kp I      &kp O
+               Q_MSE      A_NAV  ALT_S  CTL_D  SFT_F    &kp G             &kp H      SFT_J      CTL_K      RALT_L   LALT_OE  &kp DE_P
+               &kp DE_SS  GUI_Y  &kp X  &kp C  &kp V    &kp B             &kp N      &kp M      &kp COMMA  &kp DOT  LGUI_UE  &kp DE_ADIA
+                                               &mo NUM  &kp LSHFT         SPACE_SYM  &kp BSPC
              >;
         };
 
         nav_layer {
             bindings = <
-            	                    &lck      &run      &go_src   ________             &kp PG_UP  &kp HOME  &kp UP    &kp END
-            	&kp ESC  ________   &mo SPCL  ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ________  ________
+            	                    &lck      ________  ________  ________             &kp PG_UP  &kp HOME  &kp UP    &kp END
+            	&kp ESC  ________   ________  ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ________  ________
             	TODO     &kp LSHFT  ________  ________  ________  ________             ________   ________  ________  ________   ________  ________
             	                                        ________  ________             ________   &kp DEL
             >;
@@ -361,170 +186,12 @@
 
         settings_layer {
             bindings = <
-                                    ________      ________  ________  BT_CLEAR          ________  &to DEF       &to M_DEF  &to GME
-                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_x1        &to_ip60   BT_6       ________   ________
-                TODO  ________      ________      ________  ________  EXT_ON            ________  &to_archyoga  &to_nca    &to_scd    &to_devvm  TODO
+                                    ________      ________  ________  BT_CLEAR          ________  ________  ________  ________
+                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  BT_4      BT_5      BT_6      ________   ________
+                TODO  ________      ________      ________  ________  EXT_ON            ________  BT_1      BT_2      BT_3      ________   TODO
                                                             ________  ________          ________  ________
             >;
         };
-
-
-
-
-
-
-        mac_default_layer {
-            bindings = <
-                                    &kp L  &kp U        &kp A        &kp Q                    &kp W        &kp B     &kp D      &kp G
-                J_MSE      C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                    &kp M        SFT_N     CMD_T      RALT_S   LALT_H  &kp DE_Z
-                &kp DE_SS  CTL_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA              &kp P        &kp F     &kp COMMA  &kp DOT  CTL_K   &kp DE_Y
-                                                        &mo M_NUM    &kp LSHFT                SPACE_M_SYM    &kp BSPC
-             >;
-        };
-
-        mac_nav_layer {
-            bindings = <
-            	                   &lck_mac  &run       &go_src    ________             M_PUP     M_HME      &kp UP    M_END
-            	&kp ESC  ________  &mo SPCL  ________   ________   ________             M_PDWN    &kp LEFT   &kp DOWN  &kp RIGHT  &kp RET   ________
-            	TODO     &kp LSHFT ________  ________   ________   ________             ________  ________   ________  ________   ________  ________
-            	                                        ________   ________             ________  &kp DEL
-      			>;
-        };
-
-        mac_sym_layer {
-        // ---------------------------------------------------------------------
-        // |  ^  |  _  |  {  |  }  |  §  |       |  !  |  <  |  >  |  =  |  &  |
-        // |  \  |  /  |  (  |  )  |  *  |       |  ?  |  [  |  ]  |  -  |  :  |
-        // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
-        //                   | --- | --- |       | --- | --- |
-          	bindings = <
-                                         &kp DE_UNDS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL
-               &kp DE_CIRC  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  &kp DE_RPRN  &kp DE_ASTR          &kp DE_QUES  &kp DE_LBRC  &kp DE_RBRC  &kp DE_MINS  &kp DE_COLN  &kp DE_AMPR
-               TODO         &kp DE_ACUT  &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  TODO
-        	                                                         &kp DE_AT    ________             ________     ________
-          	>;
-        };
-
-        mac_num_layer {
-            bindings = <
-                                     ________  ________  &mo M_SET   ________          &kp DE_SLSH  &kp N7   &kp N8  &kp N9
-                ________  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHIFT  ________          &kp DE_ASTR  &kp N4   &kp N5  &kp N6  &kp DE_PLUS  &kp DE_MINS
-                TODO      &sk RALT   ________  ________  &mo M_FN    ________          &kp COMMA    &kp N1   &kp N2  &kp N3  &kp N0       TODO
-                                                         ________    ________          &kp DE_COLN  &kp DOT
-            >;
-        };
-
-        mac_fn_layer {
-            bindings = <
-                                    ________  ________  ________  ________          ________  &kp F7  &kp F8  &kp F9
-                ________  ________  ________  ________  ________  ________          ________  &kp F4  &kp F5  &kp F6  ________  ________
-                TODO      ________  ________  ________  ________  ________          ________  &kp F1  &kp F2  &kp F3  &kp F10   TODO
-                                                        ________  ________          &kp F11   &kp F12
-            >;
-        };
-
-        mac_settings_layer {
-            bindings = <
-                                    ________      ________  ________  BT_CLEAR          ________  &to DEF       &to M_DEF  &to GME
-                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_x1        &to_ip60   BT_6       ________   ________
-                TODO  ________      ________      ________  ________  EXT_ON            ________  &to_archyoga  &to_nca    &to_scd    &to_devvm  TODO
-                                                            ________  ________          ________  ________
-            >;
-        };
-
-
-
-
-
-
-
-
-
-        hrz_default_layer {
-            bindings = <
-                                    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G
-                J_MSE      C_H_NAV  ALT_R  CTL_I        SFT_E        &kp O                   &kp M        SFT_N      CTL_T      RALT_S   LALT_H  &kp DE_Z
-                &kp DE_SS  GUI_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  LGUI_K  &kp DE_Y
-                                                        &mo H_NUM    &kp LSHFT               SPACE_H_SYM  &kp BSPC
-             >;
-        };
-
-        hrz_nav_layer {
-            bindings = <
-            	                    &lck      &run      &go_src   ________             &kp PG_UP  &kp HOME  &kp UP    &kp END
-            	&kp ESC  ________   &mo SPCL  ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ________  ________
-            	TODO     &kp LSHFT  ________  ________  ________  ________             ________   ________  ________  ________   ________  ________
-            	                                        ________  ________             ________   &kp DEL
-            >;
-        };
-
-        hrz_sym_layer {
-        // ---------------------------------------------------------------------
-        // |  ^  |  _  |  {  |  }  |  §  |       |  !  |  <  |  >  |  =  |  &  |
-        // |  \  |  /  |  (  |  )  |  *  |       |  ?  |  [  |  ]  |  -  |  :  |
-        // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
-        //                   | --- | --- |       | --- | --- |
-        	  bindings = <
-                                         &kp DE_UNDS  &kp LA(N8)   &kp LA(N9)   &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL
-               &kp DE_CIRC  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  &kp DE_RPRN  &kp DE_ASTR          &kp DE_QUES  &kp RA(N5)   &kp RA(N6)   &kp DE_MINS  &kp DE_COLN  &kp DE_AMPR
-               ________     &kp EQUAL    &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  ________
-        	                                                         &kp DE_AT    ________             ________     ________
-        	  >;
-        };
-
-        hrz_num_layer {
-            bindings = <
-                                    ________  ________  &mo H_SET   ________         &kp DE_SLSH  &kp N7   &kp N8    &kp N9
-                ________  &sk LGUI  &sk RALT  &sk LCTRL &sk LSHIFT  ________         &kp DE_ASTR  &kp N4   &kp N5    &kp N6  &kp DE_PLUS  &kp DE_MINS
-                TODO      &sk LALT  ________  ________  &mo H_FN    ________         &kp COMMA    &kp N1   &kp N2    &kp N3  &kp N0       TODO
-                                                        ________    ________         &kp DE_COLN  &kp DOT
-            >;
-        };
-
-        hrz_fn_layer {
-            bindings = <
-                                    ________  ________  ________  ________          ________  &kp F7  &kp F8  &kp F9
-                ________  ________  ________  ________  ________  ________          ________  &kp F4  &kp F5  &kp F6  ________  ________
-                TODO      ________  ________  ________  ________  ________          ________  &kp F1  &kp F2  &kp F3  &kp F10   TODO
-                                                        ________  ________          &kp F11   &kp F12
-            >;
-        };
-
-        hrz_settings_layer {
-            bindings = <
-                                    ________      ________  ________  BT_CLEAR          ________  &to DEF       &to M_DEF  &to GME
-                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_x1        &to_ip60   BT_6     ________   ________
-                TODO  ________      ________      ________  ________  EXT_ON            ________  &to_archyoga  &to_nca    &to_scd  &to_devvm  TODO
-                                                            ________  ________          ________  ________
-            >;
-        };
-
-
-
-
-
- 
-
-
-
-
-        game_layer {
-            bindings = <
-                                 &kp L  &kp U        &kp A        &kp Q                 &kp W      &kp B     &kp D      &kp G
-               &kp J      &kp C  &kp R  &kp I        &kp E        &kp O                 &kp M      &kp N     &kp T      &kp S    &kp H  &kp DE_Z
-               &kp DE_SS  &kp V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA           &kp P      &kp F     &kp COMMA  &kp DOT  &kp K  &kp DE_Y
-                                                     &mo NUM      &kp LSHFT             SPACE_SYM  &kp BSPC
-             >;
-        };
-
-
-
-
-
-
-
-
-
 
         mouse_layer {
             bindings = <
@@ -535,17 +202,7 @@
             >;
         };
 
-        special_layer {
-            bindings = <
-                                   ________  ________  ________  &maz_spec         ________  ________  ________  ________
-                ________ ________  ________  ________  ________  &mas_spec         ________  ________  ________  ________  ________  ________
-                ________ ________  ________  ________  &m_spec   ________          ________  ________  ________  ________  ________  ________
-                                                       ________  ________          ________  ________
-            >;
-        };
-
-        // dummy layer for scrolling with trackpad
-        scroll_layer {
+        scroll_and_media_layer {
             bindings = <
                                    ________  ________  ________  ________          ________  &kp C_PREV      &kp C_PP      &kp C_NEXT
                 ________ ________  ________  ________  ________  ________          ________  &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  ________  ________

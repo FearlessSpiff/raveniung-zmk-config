@@ -36,6 +36,6 @@ cirque_spi: &spi0 {
         sensitivity = "1x";
         rotate-90;
         x-invert;
-        no-taps;
+        // no-taps;
     };
 };
