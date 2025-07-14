@@ -361,9 +361,9 @@
 
         settings_layer {
             bindings = <
-                                    ________      ________  ________  BT_CLEAR          ________  &to DEF    &to M_DEF     &to GME
-                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_x1     &to_archyoga  BT_6     ________   ________
-                TODO  ________      ________      ________  ________  EXT_ON            ________  &to_archy  &to_nca       &to_scd  &to_devvm  TODO
+                                    ________      ________  ________  BT_CLEAR          ________  &to DEF       &to M_DEF  &to GME
+                TODO  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_archyoga  &to_x1     BT_6     ________   ________
+                TODO  ________      ________      ________  ________  EXT_ON            ________  &to_archy     &to_nca    &to_scd  &to_devvm  TODO
                                                             ________  ________          ________  ________
             >;
         };
