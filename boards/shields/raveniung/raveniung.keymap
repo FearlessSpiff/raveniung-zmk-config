@@ -466,10 +466,10 @@
         // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
         //                   | --- | --- |       | --- | --- |
         	  bindings = <
-                                         &kp DE_UNDS  &kp RA(N7)   &kp RA(N0)   &kp DE_SECT          &kp DE_EXLM  &kp DE_CIRC  &kp LS(DE_CIRC)  &kp DE_EQL
-               &kp DE_LABK  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  &kp DE_RPRN  &kp DE_ASTR          &kp DE_QUES  &kp DE_LBRC  &kp DE_RBRC      &kp DE_MINS  &kp DE_COLN  &kp DE_AMPR
+                                         &kp DE_UNDS  &kp RA(N7)        &kp RA(N0)   &kp DE_SECT          &kp DE_EXLM  &kp DE_CIRC  &kp LS(DE_CIRC)  &kp DE_EQL
+               &kp DE_LABK  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN       &kp DE_RPRN  &kp DE_ASTR          &kp DE_QUES  &kp DE_LBRC  &kp DE_RBRC      &kp DE_MINS  &kp DE_COLN  &kp DE_AMPR
                ________     &kp EQUAL    &kp DE_DLR   &kp RA(DE_CIRC)   &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO      &kp DE_QUOT  &kp DE_SCLN  ________
-        	                                                         &kp DE_AT    ________             ________     ________
+        	                                                              &kp DE_AT    ________             ________     ________
         	  >;
         };
 
