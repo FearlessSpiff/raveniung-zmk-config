@@ -52,3 +52,30 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(5,0) RC(5,1) RC(5,2) RC(5,3) 
             ;
     };
 };
+
+&pro_micro_i2c {
+    status = "okay";
+
+    tps65: iqs5xx@74 {
+        status = "okay";
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
+
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        bottom-beta = <3>;
+        stationary-threshold = <5>;
+
+        flip-x;
+
+        reset-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>; /* 008 */
+        rdy-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>; /* 006 */
+    };
+};

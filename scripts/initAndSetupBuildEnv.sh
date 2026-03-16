@@ -11,4 +11,5 @@ pip install -r zephyr/scripts/requirements-base.txt
 cd ~/Development/github/zmkfirmware/zmk/app
 
 # build left
-echo 'west build -p -b nice_nano_v2 -- -DSHIELD=raveniung -DZMK_EXTRA_MODULES="/home/spiff/Development/github/petejohanson/cirque-input-module;/home/spiff/Development/github/FearlessSpiff/raveniung-zmk-config"'
+echo 'west build -p -b nice_nano_v2 -- -DSHIELD=raveniung -DZMK_EXTRA_MODULES="/home/spiff/Development/github/AYM1607/zmk-driver-azoteq-iqs5xx;/home/spiff/De:wa
+velopment/github/FearlessSpiff/raveniung-zmk-config"'

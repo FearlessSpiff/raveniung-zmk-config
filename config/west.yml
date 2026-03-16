@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
+    - name: aym1607
+      url-base: https://github.com/AYM1607
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3.0
       import: app/west.yml
-    - name: cirque-input-module
-      remote: petejohanson
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: aym1607
       revision: main
   self:
     path: config
