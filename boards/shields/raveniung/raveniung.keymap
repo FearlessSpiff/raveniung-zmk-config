@@ -199,6 +199,30 @@
                 ;
         )
 
+        ZMK_MACRO(m_win_desk_left,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LWIN>
+                , <&macro_press   &kp LCTL>
+                , <&macro_tap     &kp LEFT>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp LWIN>
+                ;
+        )
+
+        ZMK_MACRO(m_win_desk_right,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LWIN>
+                , <&macro_press   &kp LCTL>
+                , <&macro_tap     &kp RIGHT>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp LWIN>
+                ;
+        )
+
         ZMK_MACRO(m_spec,
             wait-ms = <30>;
             tap-ms = <30>;
@@ -274,8 +298,8 @@
         nav_layer {
             bindings = <
             	                    &lck      &run      &go_src   ________             &kp PG_UP  &kp HOME  &kp UP    &kp END
-            	&kp ESC  ________   &mo SPCL  ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ________  ________
-            	TODO     &kp LSHFT  ________  ________  ________  ________             ________   ________  ________  ________   ________  ________
+            	&kp ESC  ________   &mo SPCL  ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ________          ________
+            	TODO     &kp LSHFT  ________  ________  ________  ________             ________   ________  ________  ________   &m_win_desk_left  &m_win_desk_right
             	                                        ________  ________             ________   &kp DEL
             >;
         };
